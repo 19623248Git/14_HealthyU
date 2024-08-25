@@ -41,7 +41,7 @@ Untuk sistem middleware, file yang dikerjakan adalah middleware.ts di dalam fold
 Command untuk memulai program:\
 ```npm run dev```
 
-Team:
+Team: \
 | Alghan Pridanasuta | Product Manager | \
 | Muhammad Rafi Ramadhan | Product Manager | \
 | Muhammad Fithra Rizki | Software Developer | \
