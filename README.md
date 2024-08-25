@@ -49,7 +49,6 @@ Team: \
 | Theo Kurniady | Software Developer | \
 | Hanif Kalyana Aditya | Software Developer | \
 | Anas Ghazi Al Gifari | Data Scientist | \
-| Bryan Adi Priasmoro | Data Scientist | \
 | Muhammad Rafly Fauzan | Data Scientist | \
 | Nathan Jovial Hartono | Software Developer / Game Developer | \
 | Ananda Fajrul Zidan | UI/UX Designer | \
