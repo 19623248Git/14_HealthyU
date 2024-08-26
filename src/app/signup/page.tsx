@@ -8,13 +8,14 @@ import toast from "react-hot-toast";
 const signup = () => {
   const router = useRouter();
   const [user, setUser] = React.useState({
-    email: "", 
-    password: "",
     username: "",
-    NIM: "",
+    nama_lengkap: "",
+    nim: "",
     jenis_kelamin: "",
     asal_daerah: "",
     golongan_darah: "",
+    email: "", 
+    password: "",
   });
   const [buttonDisabled, setButtonDisabled] = React.useState(false);
   const  [loading, setloading] = React.useState(false);
@@ -62,14 +63,28 @@ const signup = () => {
       </label>
       <br /> 
       <label>
+        Nama Lengkap
+        <input
+          id="nama_lengkap" 
+          type="text"
+          value={user.nama_lengkap}
+          onChange={(e) => setUser({
+            ...user,
+            nama_lengkap: e.target.value,
+            })}
+          placeholder="Nama Lengkap" 
+          />
+      </label>
+      <br />
+      <label>
         NIM
         <input
           id="nim" 
           type="text"
-          value={user.NIM}
+          value={user.nim}
           onChange={(e) => setUser({
             ...user,
-            NIM: e.target.value,
+            nim: e.target.value,
             })}
           placeholder="nim" 
           />

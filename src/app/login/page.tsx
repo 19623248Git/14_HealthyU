@@ -23,9 +23,7 @@ const login = () => {
       console.log("Login success", response.data);
       toast.success("Login successful");
 
-      const res = await axios.get('/api/users/me')
-
-      router.push(`/profile/${res.data.data._id}`);
+      router.push(`/homepage`);
       
     } catch (error:any) {
       console.log("Login failed", error.message);
@@ -56,7 +54,7 @@ const login = () => {
       <div className="flex text-center items-center justify-center min-h-screen absolute left-1/2 transform -translate-x-1/2  font-['NotoSerif-SemiBold',_sans-serif] leading-none font-bold text-2xl">
         <h1>{loading ? "Processing" : "Login"}</h1>
       </div>
-      <div className="flex items-center justify-center min-h-screen absolute top-[70px] left-[33px] font-['NotoSerif-SemiBold',_sans-serif] text-lg leading-none font-semibold">
+      <div >
         <label>
           Email :   
           <input
@@ -86,7 +84,7 @@ const login = () => {
             />
         </label>
       </div>
-      <div className="flex items-center justify-center min-h-screen absolute top-[170px] left-1/2 transform -translate-x-1/2  font-['NotoSerif-SemiBold',_sans-serif] leading-none font-semibold">
+      <div >
       <button 
       onClick={onLogin}>{buttonDisabled ? "No Login" : "Login"}</button>
       </div>

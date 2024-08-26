@@ -1,14 +1,32 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { get } from "http";
 
 export default function UserProfile({params}: any){
     
     const router = useRouter();
+    const [data, setData] = React.useState({
+        asal_daerah: "",
+        email: "",
+        golongan_darah: "", 
+        jenis_kelamin: "",
+        nama_lengkap: "",
+        nim: "",
+        username: "", 
+        __v: "",
+        _id: "",
+    });
+
+    const getUserDetails = async () => {
+        const res = await axios.get('/api/users/me')
+        setData(res.data.data);
+    }
+
     const logout = async () => {
         try {
             await axios.get("/api/users/logout");
@@ -19,6 +37,12 @@ export default function UserProfile({params}: any){
             toast.error(error.message);
         }
     }
+
+    useEffect(() => {
+        getUserDetails();
+    }, []);
+
+    console.log("OUTPUTDATA", data);
 
     return (
 
@@ -40,13 +64,10 @@ export default function UserProfile({params}: any){
             src="rectangle-720.png"
         />
         <div className="text-[#000000] text-left font-['Poppins-Bold',_sans-serif] text-xl font-bold absolute left-[168px] top-[149px]">
-            Jajang Kopling{" "}
+            {data.username}
         </div>
         <div className="text-[#000000] text-left font-['Poppins-Medium',_sans-serif] text-[10px] font-medium absolute left-[168px] top-[182px]">
-            Jangkong@gmail.com{" "}
-        </div>
-        <div className="text-[#000000] text-left font-['Poppins-Medium',_sans-serif] text-[10px] font-medium absolute left-[168px] top-[200px]">
-            +62 8XX XXX XXX{" "}
+            {data.email}
         </div>
         <div
             className="w-[393px] h-[301px] absolute left-0 top-[282px] overflow-hidden"
@@ -70,19 +91,19 @@ export default function UserProfile({params}: any){
             Nama{" "}
             </div>
             <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[86px]">
-            Jajang Kopling Naraputra{" "}
+            {data.nama_lengkap}
             </div>
             <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[127px]">
-            XXXXXXX{" "}
+            {data.nim}
             </div>
             <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[168px]">
-            Tunggal Campuran{" "}
+            {data.jenis_kelamin}
             </div>
             <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-52">
-            Land of Dawn{" "}
+            {data.asal_daerah}
             </div>
             <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[250px]">
-            C++{" "}
+            {data.golongan_darah}
             </div>
             <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-[33px] top-[127px]">
             NIM{" "}
@@ -126,13 +147,13 @@ export default function UserProfile({params}: any){
             style={{ objectFit: "cover" }}
             src="../public/rectangle-721.png"
             />
-            <div className="text-[#616161] text-left font-['Poppins-Bold',_sans-serif] text-[7px] font-bold absolute left-[25px] top-2.5">
-            Jajang Kopling{" "}
-            </div>
+            <button onClick={logout} className="text-[#616161] text-left font-['Poppins-Bold',_sans-serif] text-[7px] font-bold absolute left-[25px] top-2.5">
+            LOGOUT{" "}
+            </button>
             <div className="!w-[9px] !h-[9px] !absolute !left-[84px] !top-[11px]"></div>
         </div>
         <div className="text-[#ffffff] text-left font-['Poppins-Bold',_sans-serif] text-[8px] font-bold absolute left-[260px] top-[66px]">
-            +62 08XXXXXXX{" "}
+            {data.email}
         </div>
         </div>
     </div>
