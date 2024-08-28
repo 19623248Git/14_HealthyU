@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
       return (userId.data.data._id)
     } 
     
-    const isPublicPath = path === '/login' || path === '/signup' || path === '/'
+    const isPublicPath = path === '/login' || path === '/signup'
 
     const token = request.cookies.get('token')?.value || ''
 
