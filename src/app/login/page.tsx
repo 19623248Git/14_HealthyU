@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const login = () => {
+const Login = () => {
   const router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
@@ -23,7 +23,7 @@ const login = () => {
       console.log("Login success", response.data);
       toast.success("Login successful");
 
-      router.push(`/homepage`);
+      router.push("/homepage");
     } catch (error: any) {
       console.log("Login failed", error.message);
       toast.error(error.message);
@@ -96,10 +96,10 @@ const login = () => {
       className="mr-auto pointer-events-auto mt-[600px] rounded-3xl w-[200px] h-[50px] border-2 opacity-100 text-white font-serif text-[20px] bg-gradient-to-r from-yellow-500 to-purple-600" 
       onClick={onLogin}>{buttonDisabled ? "Please fill in" : "Login"}</button>
       <div className="flex items-center justify-center min-h-screen absolute top-[200px] left-1/2 transform -translate-x-1/2  font-['NotoSerif-SemiBold',_sans-serif] leading-none font-semibold">
-        <Link className="text-opacity-50 font-serif" href="/signup">Don't have an account?</Link>
+        <Link className="text-opacity-50 font-serif" href="/signup">Don&apos;t have an account?</Link>
       </div>
     </div>
   );
 };
 
-export default login;
+export default Login;
