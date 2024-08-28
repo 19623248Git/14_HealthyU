@@ -93,7 +93,7 @@ const login = () => {
         </label>
       </div>
       <button 
-      className="pointer-events-auto mt-[600px] rounded-3xl w-[200px] h-[50px] border-2 opacity-100 text-white font-serif text-[20px] bg-gradient-to-r from-yellow-500 to-purple-600" 
+      className="mr-auto pointer-events-auto mt-[600px] rounded-3xl w-[200px] h-[50px] border-2 opacity-100 text-white font-serif text-[20px] bg-gradient-to-r from-yellow-500 to-purple-600" 
       onClick={onLogin}>{buttonDisabled ? "Please fill in" : "Login"}</button>
       <div className="flex items-center justify-center min-h-screen absolute top-[200px] left-1/2 transform -translate-x-1/2  font-['NotoSerif-SemiBold',_sans-serif] leading-none font-semibold">
         <Link className="text-opacity-50 font-serif" href="/signup">Don't have an account?</Link>

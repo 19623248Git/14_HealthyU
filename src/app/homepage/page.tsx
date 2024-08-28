@@ -57,10 +57,10 @@ export default function HomePage(){
         }
     }, [data_rs]);
 
-    let rs_nangor: any = data_rs.jatinangor.map((RS: any) => {
+    let rs_nangor: any = data_rs.jatinangor.map((RS: any, index) => {
         let lokasikampus = "Jatinangor";
         return(
-            <RS_label 
+            <RS_label key={index}
                 rumahSakit={RS.rumahSakit} 
                 specialis={RS.specialis} 
                 jarakKeKampusITB={RS.jarakKeKampusITB} 
@@ -70,10 +70,10 @@ export default function HomePage(){
         )
     })
 
-    let rs_ganesha: any = data_rs.ganesha.map((RS: any) => {
+    let rs_ganesha: any = data_rs.ganesha.map((RS: any, index) => {
         let lokasikampus = "Ganesha";
         return(
-            <RS_label 
+            <RS_label  key={index}
                 rumahSakit={RS.rumahSakit} 
                 specialis={RS.specialis} 
                 jarakKeKampusITB={RS.jarakKeKampusITB} 
@@ -83,10 +83,10 @@ export default function HomePage(){
         )
     })
 
-    let rs_cirebon: any = data_rs.cirebon.map((RS: any) => {
+    let rs_cirebon: any = data_rs.cirebon.map((RS: any, index) => {
         let lokasikampus = "Cirebon";
         return(
-            <RS_label 
+            <RS_label key={index}
                 rumahSakit={RS.rumahSakit} 
                 specialis={RS.specialis} 
                 jarakKeKampusITB={RS.jarakKeKampusITB} 
@@ -98,15 +98,16 @@ export default function HomePage(){
 
 
     return(
-        <div>
-            <h1>Welcome to Home Page</h1>
-            <button onClick={getProfile}>profile</button>
-            <br />
-            <button onClick={() => pullData("ganesha")}>Ganesha</button>
-            <button onClick={() => pullData("jatinangor")}>Jatinangor</button>
-            <button onClick={() => pullData("cirebon")}>Cirebon</button>
-            <br />
-            {rspull}
+        <div className="homepage">
+            <button className="mx-auto my-7 text-zinc-700 w-24 h-8 bg-gray-300 rounded-2xl border-2 border-white" onClick={getProfile}>profile</button>
+            <div className="flex flex-row mx-auto gap-x-11">
+                <button onClick={() => pullData("ganesha")}>Ganesha</button>
+                <button onClick={() => pullData("jatinangor")}>Jatinangor</button>
+                <button onClick={() => pullData("cirebon")}>Cirebon</button>
+            </div> 
+            <div className="flex flex-col justify-center items-center">
+                {rspull}
+            </div>
         </div>
     )
 }

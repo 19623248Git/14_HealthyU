@@ -7,8 +7,8 @@ connect();
 
 export async function GET(request: NextRequest){
     try {
-        // const data_rs = await Data_RS.findOne({_id: "66cd8eb8a7b30c02f0d594d3"});
-        const data_rs = await Data_RS.findOne({_id: new ObjectId("66cd8eb8a7b30c02f0d594d3")});
+        // const data_rs = await Data_RS.findOne({_id: "66cf283e540b6b0a8a4735b1"});
+        const data_rs = await Data_RS.findOne({_id: new ObjectId("66cf283e540b6b0a8a4735b1")});
         if(!data_rs){
             return NextResponse.json({error: "Data RS not found"}, {status: 404});
         }
