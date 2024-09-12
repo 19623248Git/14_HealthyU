@@ -46,22 +46,31 @@ const Login = () => {
       style={{
         background:
           "linear-gradient(-52.13deg, rgba(165, 93, 222, 1.00) 0%,rgba(206, 101, 177, 1.00) 50%,rgba(241, 204, 51, 1.00) 100%), linear-gradient(to left, #d9d9d9, #d9d9d9)",
-      }}>
-      <div className=" absolute top-[30px] flex flex-row  items-center justify-center">
+      }}
+    >
+      {/* Top Section with Logo */}
+      <div className="absolute top-[30px] flex flex-row  items-center justify-center">
         <img className="left-[30px] size-[100px]" src="Logo-HealthyU.png" />
         <div className="pl-[20px] text-[50px] font-serif text-indigo-800">HealthyU</div>
       </div>
-      <img className="absolute top-[164px] size-[200px]" src="johnny-10.png"/>
-      <div className="bg-[#D9D9D9] opacity-70 rounded-tl-[20px] rounded-[20px] w-[94%] h-[301px] absolute  top-[360px] ml-3 mr-3"></div>
-      <div className="flex text-center items-center justify-center min-h-screen absolute transform left-1/2-translate-x-1/2  font-['NotoSerif-SemiBold',_sans-serif] leading-none font-bold text-2xl">
-        <h1 className="font-serif text-4xl text-[#A55DDE] mb-[20px]">{loading ? "Processing" : "Login"}</h1>
-      </div>
-      <div className="flex flex-col justify-center items-center justify-center min-h-screen absolute top-[110px] font-['NotoSerif-SemiBold',_sans-serif] text-lg leading-none font-semibold w-full left-[33px]">
-        <br />
-        <label className="font-serif mr-1 text-black text-opacity-50">
-          Email :
+
+      {/* Image */}
+      <img className="absolute top-[164px] size-[200px]" src="johnny-10.png" />
+
+      {/* Semi-transparent Bubble */}
+      <div className="bg-[#D9D9D9] opacity-70 rounded-[20px] w-[94%] h-[400px] absolute top-[360px] z-0"></div>
+
+      {/* Form Elements (with same fonts and input styles) */}
+      <div className="absolute top-[380px] z-10 flex flex-col items-center justify-center w-full font-['NotoSerif-SemiBold',_sans-serif] leading-none font-bold text-2xl ">
+        <h1 className="font-serif text-4xl text-[#A55DDE] mb-[20px]">
+          {loading ? "Processing" : "Login"}
+        </h1>
+
+        {/* Email Input (with same style) */}
+        <label className="font-serif text-black text-opacity-50 mb-4">
+          Email:
           <input
-            className="mr-4 shadow-lg w-[200px]"
+            className="ml-2 shadow-lg w-[200px] p-2 rounded"
             id="email"
             type="text"
             value={user.email}
@@ -72,13 +81,14 @@ const Login = () => {
               })
             }
             placeholder=" email"
-            />
+          />
         </label>
-        <br />
-        <label className="font-serif mr-2 text-black text-opacity-50">
-          Password :
+
+        {/* Password Input (with same style) */}
+        <label className="font-serif text-black text-opacity-50 mb-4">
+          Password:
           <input
-            className="mr-12 shadow-lg w-[200px]"
+            className="ml-2 shadow-lg w-[200px] p-2 rounded"
             id="password"
             type="password"
             value={user.password}
@@ -89,15 +99,23 @@ const Login = () => {
               })
             }
             placeholder=" password"
-            />
+          />
         </label>
+
+        {/* Don't have an account link (with same style) */}
+        <Link className="text-black text-opacity-50 font-serif mb-4" href="/signup">
+          Don&apos;t have an account?
+        </Link>
       </div>
-      <button 
-      className="mr-auto pointer-events-auto mt-[600px] rounded-3xl w-[200px] h-[50px] border-2 opacity-100 text-white font-serif text-[20px] bg-gradient-to-r from-yellow-500 to-purple-600" 
-      onClick={onLogin}>{buttonDisabled ? "Please fill in" : "Login"}</button>
-      <div className="flex items-center justify-center min-h-screen absolute top-[200px] left-1/2 transform -translate-x-1/2  font-['NotoSerif-SemiBold',_sans-serif] leading-none font-semibold">
-        <Link className="text-opacity-50 font-serif" href="/signup">Don&apos;t have an account?</Link>
-      </div>
+
+      {/* Login Button (unchanged style) */}
+      <button
+        className="z-50 mx-auto mt-[600px] rounded-3xl w-[200px] h-[50px] border-2 text-white font-serif text-[20px] bg-gradient-to-r from-yellow-500 to-purple-600"
+        onClick={onLogin}
+        disabled={buttonDisabled}
+      >
+        {buttonDisabled ? "Please fill in" : "Login"}
+      </button>
     </div>
   );
 };
