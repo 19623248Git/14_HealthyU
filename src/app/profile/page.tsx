@@ -6,6 +6,8 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { get } from "http";
+import HomePage from "../homepage/page";
+import Home from "../page";
 
 export default function UserProfile({params}: any){
     
@@ -45,116 +47,34 @@ export default function UserProfile({params}: any){
     console.log("OUTPUTDATA", data);
 
     return (
-
-    <div
-        className={"bg-[#ffffff] h-[852px] relative overflow-hidden "}
-    >
-    <div className="md: flex">
-        <img
-            className="w-[25px] h-[25px] absolute left-[348px] top-[41px] overflow-visible"
-            src="icons-8-menu-10.svg"
-        />
-        <img
-            className="w-[392px] h-[86px] absolute left-px top-[215px] overflow-visible"
-            src="vector-1250.svg"
-        />
-        <img
-            className="rounded-xl w-[86px] h-[86px] absolute left-[71px] top-[149px]"
-            style={{ objectFit: "cover" }}
-            src="rectangle-720.png"
-        />
-        <div className="text-[#000000] text-left font-['Poppins-Bold',_sans-serif] text-xl font-bold absolute left-[168px] top-[149px]">
-            {data.username}
+    <div className="h-full w-full relative overflow-hidden flex flex-col bg-white">
+        <div className ="flex absolute justify-start">
+            <button className=" my-7 mx-7 text-zinc-700 w-24 h-8 bg-gray-300 bg-opacity-25 items-center justify-center flex rounded-2xl border-2 border-white">
+             <Link href="/homepage" className="text-center">BACK</Link>
+            </button>
         </div>
-        <div className="text-[#000000] text-left font-['Poppins-Medium',_sans-serif] text-[10px] font-medium absolute left-[168px] top-[182px]">
-            {data.email}
-        </div>
-        <div
-            className="w-[393px] h-[301px] absolute left-0 top-[282px] overflow-hidden"
-            style={{
-            boxShadow:
-                "0px 19px 43px 0px rgba(0, 0, 0, 0.07),  0px 78px 78px 0px rgba(0, 0, 0, 0.06),  0px 174px 105px 0px rgba(0, 0, 0, 0.03),  0px 310px 124px 0px rgba(0, 0, 0, 0.01),  0px 485px 136px 0px rgba(0, 0, 0, 0.00)",
-            }}
-        >
-            <div className="bg-[#ffffff] rounded-tl-[20px] rounded-tr-[20px] w-[393px] h-[301px] absolute left-0 top-0"></div>
-            <div
-            className="text-center font-['NotoSerif-Black',_sans-serif] text-[15px] leading-none font-black absolute left-[22px] top-[27px]"
-            style={{
-                background:
-                "linear-gradient(-52.13deg, rgba(165, 93, 222, 1.00) 0%,rgba(206, 101, 177, 1.00) 50%,rgba(241, 204, 51, 1.00) 100%)",
-                backgroundClip: "text",
-            }}
-            >
-            Profil Saya{" "}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-[33px] top-[86px]">
-            Nama{" "}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[86px]">
-            {data.nama_lengkap}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[127px]">
-            {data.nim}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[168px]">
-            {data.jenis_kelamin}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-52">
-            {data.asal_daerah}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-36 top-[250px]">
-            {data.golongan_darah}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-[33px] top-[127px]">
-            NIM{" "}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-[33px] top-[168px]">
-            Kelamin{" "}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-[33px] top-[209px]">
-            Asal Daerah{" "}
-            </div>
-            <div className="text-[#000000] text-center font-['NotoSerif-SemiBold',_sans-serif] text-xs leading-none font-semibold absolute left-[33px] top-[250px]">
-            Gol. Darah{" "}
-            </div>
-            <div
-            className="border-solid border-[#000000] border-t border-r-[0] border-b-[0] border-l-[0] w-[333.01px] h-0 absolute left-[22px] top-[57px]"
-            style={{
-                marginTop: "-1px",
-                transformOrigin: "0 0",
-                transform: "rotate(0deg) scale(1, 1)",
-            }}
-            ></div>
-        </div>
-        <div
-            className="w-[393px] h-24 absolute left-0 top-0"
-            style={{
+        <div className=" w-full h-20" style={{
             background:
-                "linear-gradient(-52.13deg, rgba(165, 93, 222, 1.00) 0%,rgba(206, 101, 177, 1.00) 50%,rgba(241, 204, 51, 1.00) 100%), linear-gradient(to left, #d9d9d9, #d9d9d9)",
-            }}
-        ></div>
-        <img
-            className="w-[506px] h-[403px] absolute left-[calc(50%_-_371.5px)] top-[-121px]"
-            style={{ objectFit: "cover" }}
-            src="../public/healthy-u-logo-10.png"
-        />
-        <div
-            className="bg-[rgba(255,255,255,0.30)] rounded-[15px] border-solid border-[#ffffff] border pt-2.5 pr-[15px] pb-2.5 pl-[15px] w-[98px] h-[30px] absolute left-[238px] top-[29px]"
-            style={{ backdropFilter: "blur(15px)" }}
-        >
-            <img
-            className="rounded-sm w-[11px] h-[11px] absolute left-2.5 top-2.5"
-            style={{ objectFit: "cover" }}
-            src="../public/rectangle-721.png"
-            />
-            <button onClick={logout} className="text-[#616161] text-left font-['Poppins-Bold',_sans-serif] text-[7px] font-bold absolute left-[25px] top-2.5">
+            "linear-gradient(-52.13deg, rgba(165, 93, 222, 1.00) 0%,rgba(206, 101, 177, 1.00) 50%,rgba(241, 204, 51, 1.00) 100%), linear-gradient(to left, #d9d9d9, #d9d9d9)",
+         }}>
+            <div className="flex justify-end">
+                <button onClick={logout} className=" my-7 mx-7 text-zinc-700 w-24 h-8 bg-gray-300 bg-opacity-25 rounded-2xl border-2 border-white">
             LOGOUT{" "}
             </button>
-            <div className="!w-[9px] !h-[9px] !absolute !left-[84px] !top-[11px]"></div>
+            </div>
         </div>
-        <div className="text-[#ffffff] text-left font-['Poppins-Bold',_sans-serif] text-[8px] font-bold absolute left-[260px] top-[66px]">
-            {data.email}
+        <div className="flex flex-col items-center justify-center m-4 p-4">
+            <img className="rounded-full w-1/5 h-1/5" src="batman.jpg"/>
+            <h1 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-xl font-bold mt-2">{data.username}</h1>
+            <h2 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-lg font-normal">{data.email}</h2>
         </div>
+        <div className=" flex ml-auto items-center justify-center shadow-lg  flex-col mx-auto mb-10 w-1/2  bg-white rounded-xl border-2">
+            <h1 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-xl font-bold m-2 mt-3">PROFIL SAYA</h1>
+            <h2 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-sm font-normal m-1/2">Nama Lengkap : {data.nama_lengkap}</h2>
+            <h2 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-sm font-normal m-1/2">NIM : {data.nim}</h2>
+            <h2 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-sm font-normal m-1/2">Jenis Kelamin : {data.jenis_kelamin}</h2>
+            <h2 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-sm font-normal m-1/2">Asal Daerah : {data.asal_daerah}</h2>
+            <h2 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-sm font-normal m-1/2 mb-5">Golongan Darah : {data.golongan_darah}</h2>
         </div>
     </div>
     )   
