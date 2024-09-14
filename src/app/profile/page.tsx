@@ -64,7 +64,7 @@ export default function UserProfile({params}: any){
             </div>
         </div>
         <div className="flex flex-col items-center justify-center m-4 p-4">
-            <img className="rounded-full w-1/5 h-1/5" src="batman.jpg"/>
+            <img className="rounded-full w-1/5 h-1/5" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Profile_photo_placeholder_square.svg"/>
             <h1 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-xl font-bold mt-2">{data.username}</h1>
             <h2 className="text-[#000000] font-['Poppins-Bold',_sans-serif] text-lg font-normal">{data.email}</h2>
         </div>
