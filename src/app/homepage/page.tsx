@@ -100,20 +100,23 @@ export default function HomePage(){
 
     return(
         <div className="homepage">
-            <div className="flex justify-between mb-2">
-                <div className="margin-left my-7 mx-7">
+            <div className="flex items-center justify-between mb-2">
+                <div className="flex  margin-left my-7 mx-7">
                     <img className="size-[45px]" src="Logo-HealthyU.png" />
+                    <div className="pl-[10px] text-[50px] font-serif text-purple-700">HealthyU</div>
                 </div>
-                <button className="ml-auto my-7 mx-7 text-zinc-700 w-24 h-8 bg-gray-300 bg-opacity-25 rounded-2xl border-2 border-white" onClick={getProfile}>PROFILE</button>
+                <button className="ml-auto my-7 mx-7 text-zinc-700 w-12 h-12 bg-opacity-25 rounded-full border-2 border-purple-700" onClick={getProfile}>
+                    <img src="icon-profile-removebg-preview.png"/>
+                </button>
             </div>
-            <div className="flex flex-row mx-auto gap-x-11 mb-4">
-                <div className= "bg-white w-24 shadow rounded-xl border-2 border-black text-center">
+            <div className="text-lg text-white gap-x-2 font-semibold items-center text-center flex justify-center h-[50px] w-[380px] mx-auto mb-4 py-2 rounded-2xl  ">
+                <div className= "bg-purple-400 content-center w-full h-[50px] px-5 py-1.5 hover:duration-500 hover:ease-in-out hover:opacity-50 rounded-2xl shadow-xl">
                     <button onClick={() => pullData("ganesha")}>Ganesha</button>
                 </div>
-                <div className= "bg-white w-24 shadow rounded-xl border-2 border-black text-center">
+                <div className= "bg-purple-400 content-center w-full h-[50px] px-5 py-1.5 hover:duration-500 hover:ease-in-out hover:opacity-50 rounded-2xl shadow-xl">
                     <button onClick={() => pullData("jatinangor")}>Jatinangor</button>
                 </div>
-                <div className= "bg-white w-24 shadow rounded-xl border-2 border-black text-center">
+                <div className= "bg-purple-400 content-center w-full h-[50px] px-5 py-1.5 hover:duration-500 hover:ease-in-out hover:opacity-50 rounded-2xl shadow-xl">
                     <button onClick={() => pullData("cirebon")}>Cirebon</button>
                 </div>
             </div> 

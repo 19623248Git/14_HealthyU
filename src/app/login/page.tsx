@@ -103,14 +103,14 @@ const Login = () => {
         </label>
 
         {/* Don't have an account link (with same style) */}
-        <Link className="text-black text-opacity-50 font-serif mb-4" href="/signup">
+        <Link className="text-black text-opacity-50 font-serif mb-4 hover:underline" href="/signup">
           Don&apos;t have an account?
         </Link>
       </div>
 
       {/* Login Button (unchanged style) */}
       <button
-        className="z-50 mx-auto mt-[600px] rounded-3xl w-[200px] h-[50px] border-2 text-white font-serif text-[20px] bg-gradient-to-r from-yellow-500 to-purple-600"
+        className="z-50 mx-auto mt-[600px] rounded-3xl w-[200px] h-[50px] hover:brightness-75 text-white font-serif text-[20px] bg-gradient-to-r from-yellow-500 to-purple-600"
         onClick={onLogin}
         disabled={buttonDisabled}
       >
