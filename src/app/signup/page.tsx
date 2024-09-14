@@ -57,11 +57,11 @@ const Signup = () => {
         <div className="pl-[20px] text-[50px] font-serif text-indigo-800">HealthyU</div>
       </div>
       <img className="absolute top-[164px] size-[200px]" src="johnny-10.png"/>
-      <div className="bg-[#D9D9D9] opacity-70 rounded-tl-[20px] rounded-[20px] w-[90%] h-[601px] absolute  top-[360px] ml-3 mr-3"></div>
+      <div className="bg-[#D9D9D9] opacity-70 rounded-tl-[20px] rounded-[20px] w-[90%] h-[640px] absolute  top-[360px] ml-3 mr-3"></div>
         <div className="flex text-center items-center justify-center min-h-screen absolute left-1/2 transform -translate-x-1/2  font-['NotoSerif-SemiBold',_sans-serif] leading-none font-bold text-2xl">
         </div>
-        <div className="flex flex-col justify-center items-center min-h-screen absolute top-[210px] font-['NotoSerif-SemiBold',_sans-serif] text-lg leading-none font-semibold w-full  mt-[100px]">
-          <h1 className="font-serif mb-[20px] mt-[15%] text-4xl text-[#A55DDE] ">{loading ? "Processing" : "Signup"}</h1>
+        <div className="flex flex-col justify-center items-center min-h-screen absolute top-[23%] font-['NotoSerif-SemiBold',_sans-serif] text-lg leading-none font-semibold w-full  mt-[100px]">
+          <h1 className="font-serif mb-[20px] text-4xl text-[#A55DDE] ">{loading ? "Processing" : "Signup"}</h1>
           <div className="flex flex-col justify-center items-center">
             <label className="text-black text-opacity-50 items-center">
               {/* Username :  */}
